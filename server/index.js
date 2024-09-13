@@ -2,10 +2,11 @@ import express from "express";
 import Stripe from "stripe";
 import cors from "cors";
 import "dotenv/config";
+
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 8000;
 app.use(cors());
-const DOMAIN_URL = "http://localhost:5173";
+const DOMAIN_URL = process.env.DOMAIN_URL;
 
 app.get("/", (req, res) => {
   res.send("Hello from Server");
